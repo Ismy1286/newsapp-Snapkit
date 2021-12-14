@@ -17,9 +17,12 @@ class News: Codable {
 class Articles: Codable {
     var title: String? = nil
     var description: String? = nil
+    var urlToImage: String? = nil
+    
         
     enum CodingKeys: String, CodingKey {
         case title = "title"
         case description = "description"
+        case urlToImage = "urlToImage"
     }
 }

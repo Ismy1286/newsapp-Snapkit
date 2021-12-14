@@ -91,8 +91,8 @@
 				CEE731A1275A60B500F241FD /* Assets.xcassets */,
 				CEE731A3275A60B500F241FD /* LaunchScreen.storyboard */,
 				CEE731A6275A60B500F241FD /* Info.plist */,
-				CEDD07A32768680600E55DF1 /* NewsCell.swift */,
 				CEDD07A52768703F00E55DF1 /* News.swift */,
+				CEDD07A32768680600E55DF1 /* NewsCell.swift */,
 			);
 			path = TestCocoa;
 			sourceTree = "<group>";

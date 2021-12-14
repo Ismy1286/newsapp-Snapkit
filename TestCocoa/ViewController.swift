@@ -22,15 +22,20 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         view.addSubview(newsTableView)
         newsTableView.snp.makeConstraints { make in
-            make.top.bottom.left.right.equalToSuperview()
+            make.top.equalToSuperview()
+            make.bottom.equalToSuperview()
+            make.left.equalToSuperview()
+            make.right.equalToSuperview()
+            
         }
         
-        URLSession.shared.dataTask(with: URL(string: "https://newsapi.org/v2/everything?q=apple&from=2021-12-13&to=2021-12-13&sortBy=popularity&apiKey=API_KEY")!) { data, response, error in
+        URLSession.shared.dataTask(with: URL(string: "https://newsapi.org/v2/everything?q=tesla&from=2021-11-14&sortBy=publishedAt&apiKey=e5e338add27e4ef88f26cd5a8b1af310")!) { data, response, error in
             if let data = data {
                 do {
-                    self.model  = (try JSONDecoder().decode(News.self, from: data)).article
+                    self.model = (try JSONDecoder().decode(News.self, from: data)).article
                     DispatchQueue.main.async {
                         
                         self.newsTableView.reloadData()
@@ -53,7 +58,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 130
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
